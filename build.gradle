@@ -1,0 +1,44 @@
+buildscript {
+    apply from: "dependencies.gradle"
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.plugin.spring" version "$kotlin_version"
+    id "org.springframework.boot" version "$spring_version"
+    id "io.spring.dependency-management" version "$spring_dependencies_version"
+}
+
+group 'com.server'
+
+apply plugin: "kotlin"
+apply plugin: "application"
+apply plugin: "org.jetbrains.kotlin.jvm"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.security:spring-security-oauth2-jose"
+    implementation "org.springframework.security:spring-security-oauth2-resource-server"
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapi_version"
+    implementation "org.springdoc:springdoc-openapi-starter-common:$openapi_version"
+    implementation "com.nimbusds:oauth2-oidc-sdk:$oauth2_oidc_sdk_version"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_19
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_19
+}

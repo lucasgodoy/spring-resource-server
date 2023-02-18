@@ -1,0 +1,28 @@
+# eclipse parts
+bin/
+.metadata
+.lck
+.classpath
+.project
+.settings/
+
+# intelliJ parts
+*.iml
+.idea
+*/out
+
+# gradle parts
+.gradle/
+
+# Build artifacts at all
+*.class
+build/
+*.jar
+!gradle-wrapper.jar
+*.log
+*.bak
+
+web/node_modules/
+**/out
+**/.DS_Store
+gradle.properties

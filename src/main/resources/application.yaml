@@ -1,0 +1,18 @@
+server:
+  port: 5040
+
+security:
+  jwt:
+    issuerUri: dummy
+    jwkSetUri: dummy
+  opaque:
+    introspectionUri: dummy
+    clientId: dummy
+    clientSecret: dummy
+
+springDoc:
+  apiVersion: "1.0"
+  apiDocs:
+    path: /resource-server-api-docs
+  swaggerUi:
+    path: /resource-server-api-docs/resource-server-api-ui.html

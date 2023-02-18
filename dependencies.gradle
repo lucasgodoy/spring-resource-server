@@ -1,0 +1,7 @@
+ext {
+    kotlin_version = '1.8.0'
+    oauth2_oidc_sdk_version = '10.6'
+    openapi_version = '2.0.2'
+    spring_version = '3.0.2'
+    spring_dependencies_version = '1.1.0'
+}
